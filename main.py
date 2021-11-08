@@ -63,9 +63,6 @@ class AirbnbQuery:
         # Handle bad request
         return res.json()
 
-    def get_json_file(self, room_id):
-        print(self.get_room_details(room_id))
-
     def get_all_rooms_details(self, ids: list):
         details = {}
         for room_id in ids:
@@ -85,9 +82,6 @@ class AirbnbQuery:
 
 
 if __name__ == '__main__':
-    airbnb_query = AirbnbQuery()
-    all_data = airbnb_query.get_all_rooms_details([50633275])
-    print(all_data)
     query = AirbnbQuery()
     all_results = query.get_all_rooms_details([33571268, 33090114, 50633275])
     pp = pprint.PrettyPrinter(indent=2)
